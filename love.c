@@ -1,7 +1,7 @@
-#include <iostream>
-using namespace std;
-void main()
+#include <stdio.h>
+
+int main(int argc, const char *argv[])
 {
-	cout<<"Hello XJB"<<endl;	
-	system("pause");
+    printf("hello world\n");
+    return 0;
 }
