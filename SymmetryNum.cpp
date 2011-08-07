@@ -1,4 +1,3 @@
-//本程序求解最大的能够表示为两个三位数乘三位数的回文
 #include<iostream>
 #include<math.h>
 using namespace std;
@@ -8,7 +7,7 @@ struct Flag
 	int toc,x,y;
 };
 
-Flag Divisible2(int num)	//判断一个数能否表示为两个三位数相乘
+Flag Divisible2(int num)
 {
 	Flag f;
 	f.toc = 0;
