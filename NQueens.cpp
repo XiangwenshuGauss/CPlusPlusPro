@@ -1,12 +1,11 @@
-//N皇后问题
 #include<iostream>
 using namespace std;
 #define N 8
-int X[N+1]; //X[1]代表第一行的皇后所在的列数，X[1]~X[8]
+int X[N+1]; 
 static int count=0;
 int count2 = 0;
 
-bool Place(int k)			//判断第k行的皇后放在X[k]是否可行
+bool Place(int k)			
 {
 	int i;
 	i=1;
@@ -19,14 +18,14 @@ bool Place(int k)			//判断第k行的皇后放在X[k]是否可行
 	return true;
 }
 
-void Print(int X[N+1])		//打印函数
+void Print(int X[N+1])		
 {
-	count++;		//计数可行解的数量
+	count++;		
 	if(count==1)
 	{
-		cout<<"本程序求解"<<N<<"皇后问题:"<<endl;
+		cout<<"This Program solves "<<N<<" Queens problem"<<endl;
 	}
-	cout<<"第"<<count<<"种可能为："<<endl;
+	cout<<"the"<<count<<"situation:"<<endl;
 	for(int i=1;i<=N;i++)
 	{
 		for(int j=1;j<X[i];j++)
@@ -44,7 +43,7 @@ void Print(int X[N+1])		//打印函数
 	//system("pause");
 }
 
-void NQueens()				//求解皇后问题
+void NQueens()				//Solution for N Queens
 {
 	int k;
 	X[1]=0;
@@ -61,13 +60,13 @@ void NQueens()				//求解皇后问题
 		{
 			if(k==N)
 			{
-				Print(X);		//打印函数，搜到一个打印一个。
+				Print(X);		//Find one print one
 				count2++;
 			}
 			else
 			{	
 				k++;
-				X[k]=0;		//初始都站在0位置
+				X[k]=0;		//for every x[i],initial to zero
 			}
 		}
 		else
@@ -80,6 +79,6 @@ void NQueens()				//求解皇后问题
 void main()
 {
 	NQueens();
-	cout<<"共有可行解数为："<<count2<<endl;
+	cout<<"The total number of the solutions is："<<count2<<endl;
 	system("pause");
 }
