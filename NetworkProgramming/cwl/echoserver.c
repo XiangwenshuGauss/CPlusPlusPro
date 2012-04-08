@@ -46,6 +46,7 @@ int main(int argc, char const* argv[])
         size_t n = recv(conn_fd, buff, MAXLINE, 0);
         buff[n] = '\0';
         printf("recv msg from client: %s\n", buff);
+        send(conn_fd, buff, n, 0);
         close(conn_fd);
     }
     close(listen_fd);
