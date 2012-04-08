@@ -11,7 +11,7 @@
  * 打印错误信息
  */
 void error(const char *err) {
-    printf("%s: %s (errno: %d)\n", err, strerror(errno), errno);
+    fprintf(stderr, "%s: %s (errno: %d)\n", err, strerror(errno), errno);
 }
 
 /**
@@ -48,6 +48,7 @@ int main(int argc, char const* argv[])
     if (listen(listen_fd, 10) == -1) {
         die("listen socket error");
     }
+    printf("listening on port: %d\n", ntohs(addr.sin_port));
 
     while (1) {
         // 接受一个新的连接
